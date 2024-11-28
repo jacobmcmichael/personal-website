@@ -1,3 +1,11 @@
 :root {
 	--button-border-color: #030712;
+
+	/* Primary */
+	--button-primary-text-color: #ffffff;
+	--button-primary-background-color: #030712;
+
+	/* Secondary */
+	--button-secondary-text-color: #030712;
+	--button-secondary-background-color: #ffffff;
 }
