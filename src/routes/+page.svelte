@@ -8,3 +8,9 @@
 	documentation
 </p>
 <Button />
+<Button icon="arrow-right" />
+<Button variant="symbol" />
+<Button
+	icon="arrow-right"
+	variant="symbol"
+/>
