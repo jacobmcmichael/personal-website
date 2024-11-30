@@ -1,0 +1,10 @@
+#Hero .inner {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+#Hero h1,
+#Hero p {
+	text-align: center;
+}

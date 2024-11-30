@@ -1,5 +1,6 @@
 button {
 	display: inline-flex;
+	justify-content: center;
 	align-items: stretch;
 	gap: 0.5rem;
 
@@ -9,10 +10,11 @@ button {
 	font-optical-sizing: auto;
 	letter-spacing: 0.01455em;
 	line-height: 130%;
-
+	text-align: center;
 	text-transform: capitalize;
+
 	padding: 1.5rem 3rem;
-	border: 1px solid var(--button-border-color);
+	border: 1px solid var(--color-button-border);
 	border-radius: 100px;
 
 	transition: opacity 0.3s;
@@ -28,18 +30,18 @@ button:hover {
 }
 
 button.button--primary {
-	color: var(--button-primary-text-color);
-	background-color: var(--button-primary-background-color);
+	color: var(--color-button-primary-text);
+	background-color: var(--color-button-primary-bg);
 }
 
 button.button--secondary {
-	color: var(--button-secondary-text-color);
-	background-color: var(--button-secondary-background-color);
+	color: var(--color-button-secondary-text);
+	background-color: var(--color-button-secondary-bg);
 }
 
 button.button--symbol {
-	color: var(--button-secondary-text-color);
-	background-color: var(--button-secondary-background-color);
+	color: var(--color-button-secondary-text);
+	background-color: var(--color-button-secondary-bg);
 
 	padding: 1rem 1.75rem;
 }

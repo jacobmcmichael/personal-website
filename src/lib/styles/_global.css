@@ -1,4 +1,43 @@
 body {
-	font-family: "Inter Tight", sans-serif;
-	font-size: 1rem;
+	color: var(--color-font-body);
+	font-family: var(--font-family-body);
+	font-size: var(--font-size-base);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--heading-font-family);
+}
+
+h1 {
+	color: var(--color-font-heading);
+	font-size: var(--font-size-h1);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 100%;
+}
+
+p {
+	font-size: var(--font-size-body);
+	letter-spacing: 0.02em;
+	line-height: 130%;
+}
+
+/* Sections */
+section {
+	padding: 0 20px;
+}
+
+section .inner {
+	padding: 40px 0;
+}
+
+/* Utilities */
+span.accent {
+	color: var(--color-font-accent);
 }

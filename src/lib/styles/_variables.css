@@ -1,11 +1,24 @@
 :root {
-	--button-border-color: #030712;
+	/* Typography */
+	--font-family-heading: "Inter Tight", sans-serif;
+	--font-family-body: "Inter Tight", sans-serif;
 
-	/* Primary */
-	--button-primary-text-color: #ffffff;
-	--button-primary-background-color: #030712;
+	--font-size-base: 16px;
+	--font-size-body: 1.375rem;
+	--font-size-h1: 3.75rem;
 
-	/* Secondary */
-	--button-secondary-text-color: #030712;
-	--button-secondary-background-color: #ffffff;
+	--color-font-body: #030712;
+	--color-font-heading: #030712;
+	--color-font-accent: #b6bcc6;
+
+	/* Buttons */
+	--color-button-border: #030712;
+
+	/* Button - Primary */
+	--color-button-primary-text: #ffffff;
+	--color-button-primary-bg: #030712;
+
+	/* Button - Secondary */
+	--color-button-secondary-text: #030712;
+	--color-button-secondary-bg: #ffffff;
 }
