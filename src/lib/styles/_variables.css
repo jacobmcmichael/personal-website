@@ -29,3 +29,9 @@
 	--color-button-secondary-text: #030712;
 	--color-button-secondary-bg: #ffffff;
 }
+
+@media screen and (min-width: 768px) {
+	:root {
+		--font-size-h1: 6rem;
+	}
+}

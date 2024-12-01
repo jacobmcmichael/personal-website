@@ -46,3 +46,23 @@ section .inner {
 span.accent {
 	color: var(--color-font-accent);
 }
+
+@media screen and (min-width: 768px) {
+	section {
+		padding: 0 40px;
+	}
+
+	section .inner {
+		padding: 56px 0;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	section {
+		padding: 0 72px;
+	}
+
+	section .inner {
+		padding: 72px 0;
+	}
+}

@@ -1,7 +1,6 @@
-#Hero .inner {
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
+#Hero h1,
+#Hero .inner__description {
+	margin-bottom: 40px;
 }
 
 #Hero h1,
@@ -9,13 +8,76 @@
 	text-align: center;
 }
 
-#Hero .socials__group {
+#Hero .inner {
+	display: flex;
+	flex-direction: column;
+}
+
+#Hero .inner__description {
 	display: inline-flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+#Hero .inner__links {
+	display: inline-flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+#Hero .inner__links > a {
+	flex: 1;
+}
+
+#Hero .description__decoration {
+	display: none;
+}
+
+#Hero .links__socials {
+	display: inline-flex;
+	justify-content: center;
 	align-self: center;
+	flex: 1;
 	gap: 1.5rem;
 }
 
-#Hero .socials__group a {
+#Hero .links__socials a {
 	font-size: 1rem;
 	text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+	#Hero .inner__description {
+		margin-bottom: 56px;
+	}
+
+	#Hero h1 {
+		text-align: left;
+	}
+
+	#Hero .description__decoration {
+		display: block;
+		flex: 1 0 30%;
+
+		width: 100%;
+		height: 1px;
+
+		background-color: #d1d5db;
+	}
+
+	#Hero .inner__description p {
+		text-align: left;
+	}
+
+	#Hero .inner__links {
+		gap: 1.5rem;
+	}
+
+	#Hero .links__socials {
+		justify-content: flex-start;
+		gap: 3rem;
+	}
 }

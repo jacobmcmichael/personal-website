@@ -40,27 +40,32 @@
 			<span class="accent">modern, scalable</span> web applications.
 		</h1>
 
-		<p>
-			I'm Jake, a Web Developer living in California, committed to
-			creating digital solutions that are simple, delightful, and
-			effective.
-		</p>
+		<div class="inner__description">
+			<div class="description__decoration"></div>
+			<p>
+				I'm Jake, a Web Developer living in California, committed to
+				creating digital solutions that are simple, delightful, and
+				effective.
+			</p>
+		</div>
 
-		<Link
-			value="Let's Talk"
-			variant="primary"
-			icon="arrow-right"
-		/>
+		<div class="inner__links">
+			<Link
+				value="Let's Talk"
+				variant="primary"
+				icon="arrow-right"
+			/>
 
-		<div class="socials__group">
-			{#each socialElements as element}
-				<Link
-					value={element.value}
-					variant={element.variant}
-					href={element.href}
-					target={element.target}
-				/>
-			{/each}
+			<div class="links__socials">
+				{#each socialElements as element}
+					<Link
+						value={element.value}
+						variant={element.variant}
+						href={element.href}
+						target={element.target}
+					/>
+				{/each}
+			</div>
 		</div>
 	</div>
 </section>
