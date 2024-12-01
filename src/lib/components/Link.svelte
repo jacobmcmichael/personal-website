@@ -1,17 +1,20 @@
 <script lang="ts">
 	/* Styles */
-	import "$lib/styles/button.css";
+	import "$lib/styles/link.css";
 
 	/* Components */
 	import { ArrowRight, ArrowUpRight } from "$lib/components/Icons.svelte";
 
 	/* Types */
-	import type { ButtonProps } from "$lib/types/components";
+	import type { LinkProps } from "$lib/types/components";
 
 	const renderDefaultIcon = (variant: string) => {
 		switch (variant) {
 			case "symbol":
 				return "arrow-right";
+
+			case "plain":
+				return "arrow-up-right";
 
 			default:
 				return undefined;
@@ -19,12 +22,14 @@
 	};
 
 	let {
-		type = "button",
-		value = "button",
+		href = "/",
+		target,
+		referrerpolicy,
+		value = "link",
 		variant = "primary",
 		icon = renderDefaultIcon(variant),
 		customClass = "",
-	}: ButtonProps = $props();
+	}: LinkProps = $props();
 </script>
 
 {#snippet renderIcon(icon: string)}
@@ -43,28 +48,32 @@
 	{/if}
 {/snippet}
 
-{#snippet renderButton(variant: string, value: string)}
+{#snippet renderLink(variant: string, value: string)}
 	{#if variant !== "symbol"}
-		<button
-			class={`button--${variant} ${customClass}`.trim()}
-			{type}
+		<a
+			class={`link--${variant} ${customClass}`.trim()}
+			{href}
+			{target}
+			{referrerpolicy}
 		>
 			{@render renderSpan?.(variant, value)}
 			{#if icon}
 				{@render renderIcon?.(icon)}
 			{/if}
-		</button>
+		</a>
 	{:else}
-		<button
-			class={`button--${variant} ${customClass}`.trim()}
-			{type}
+		<a
+			class={`link--${variant} ${customClass}`.trim()}
+			{href}
+			{target}
+			{referrerpolicy}
 			aria-label={value}
 		>
 			{#if icon}
 				{@render renderIcon?.(icon)}
 			{/if}
-		</button>
+		</a>
 	{/if}
 {/snippet}
 
-{@render renderButton(variant, value)}
+{@render renderLink(variant, value)}

@@ -11,14 +11,21 @@
 	--color-font-heading: #030712;
 	--color-font-accent: #b6bcc6;
 
+	/* Links */
+	--color-link-border: #030712;
+
+	--color-link-primary-text: #ffffff;
+	--color-link-primary-bg: #030712;
+
+	--color-link-secondary-text: #030712;
+	--color-link-secondary-bg: #ffffff;
+
 	/* Buttons */
 	--color-button-border: #030712;
 
-	/* Button - Primary */
 	--color-button-primary-text: #ffffff;
 	--color-button-primary-bg: #030712;
 
-	/* Button - Secondary */
 	--color-button-secondary-text: #030712;
 	--color-button-secondary-bg: #ffffff;
 }

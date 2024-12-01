@@ -28,6 +28,11 @@ p {
 	line-height: 130%;
 }
 
+/* Icons */
+svg {
+	stroke-width: 2px;
+}
+
 /* Sections */
 section {
 	padding: 0 20px;

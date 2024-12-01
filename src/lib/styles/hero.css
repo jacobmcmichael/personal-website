@@ -8,3 +8,14 @@
 #Hero p {
 	text-align: center;
 }
+
+#Hero .socials__group {
+	display: inline-flex;
+	align-self: center;
+	gap: 1.5rem;
+}
+
+#Hero .socials__group a {
+	font-size: 1rem;
+	text-transform: uppercase;
+}

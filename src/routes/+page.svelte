@@ -4,7 +4,6 @@
 
 	/* Components */
 	import Hero from "$lib/sections/Hero.svelte";
-	import Button from "$lib/components/Button.svelte";
 
 	/* Props */
 	let { data }: { data: ProjectsData } = $props();
@@ -19,11 +18,3 @@
 		<p>{project.excerpt}</p>
 	</div>
 {/each}
-
-<Button />
-<Button icon="arrow-right" />
-<Button variant="symbol" />
-<Button
-	icon="arrow-right"
-	variant="symbol"
-/>

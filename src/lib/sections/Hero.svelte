@@ -3,7 +3,34 @@
 	import "$lib/styles/hero.css";
 
 	/* Components */
-	import Button from "$lib/components/Button.svelte";
+	import Link from "$lib/components/Link.svelte";
+
+	/* Types */
+	import type { LinkProps } from "$lib/types/components";
+
+	const socialElements: LinkProps[] = [
+		{
+			value: "Gmail",
+			variant: "plain",
+			href: "mailto:jacobmcmichael@gmail.com",
+			target: "_blank",
+			referrerpolicy: "no-referrer",
+		},
+		{
+			value: "LinkedIn",
+			variant: "plain",
+			href: "https://www.linkedin.com/in/jacobmcmichael/",
+			target: "_blank",
+			referrerpolicy: "no-referrer",
+		},
+		{
+			value: "GitHub",
+			variant: "plain",
+			href: "https://github.com/jacobmcmichael",
+			target: "_blank",
+			referrerpolicy: "no-referrer",
+		},
+	];
 </script>
 
 <section id="Hero">
@@ -19,10 +46,21 @@
 			effective.
 		</p>
 
-		<Button
+		<Link
 			value="Let's Talk"
 			variant="primary"
 			icon="arrow-right"
 		/>
+
+		<div class="socials__group">
+			{#each socialElements as element}
+				<Link
+					value={element.value}
+					variant={element.variant}
+					href={element.href}
+					target={element.target}
+				/>
+			{/each}
+		</div>
 	</div>
 </section>
