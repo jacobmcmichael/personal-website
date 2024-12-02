@@ -3,7 +3,11 @@
 	import "$lib/styles/link.css";
 
 	/* Components */
-	import { ArrowRight, ArrowUpRight } from "$lib/components/Icons.svelte";
+	import {
+		ArrowRight,
+		ArrowUpRight,
+		Menu,
+	} from "$lib/components/Icons.svelte";
 
 	/* Types */
 	import type { LinkProps } from "$lib/types/components";
@@ -29,6 +33,7 @@
 		variant = "primary",
 		icon = renderDefaultIcon(variant),
 		customClass = "",
+		...restProps
 	}: LinkProps = $props();
 </script>
 
@@ -37,6 +42,8 @@
 		{@html ArrowRight()}
 	{:else if icon === "arrow-up-right"}
 		{@html ArrowUpRight()}
+	{:else if icon === "menu"}
+		{@html Menu()}
 	{:else if typeof icon === "string"}
 		{@html icon}
 	{/if}
@@ -55,6 +62,7 @@
 			{href}
 			{target}
 			{referrerpolicy}
+			{...restProps}
 		>
 			{@render renderSpan?.(variant, value)}
 			{#if icon}
@@ -68,6 +76,7 @@
 			{target}
 			{referrerpolicy}
 			aria-label={value}
+			{...restProps}
 		>
 			{#if icon}
 				{@render renderIcon?.(icon)}

@@ -14,7 +14,8 @@ h6 {
 	font-family: var(--heading-font-family);
 }
 
-h1 {
+h1,
+.h1 {
 	color: var(--color-font-heading);
 	font-size: var(--font-size-h1);
 	font-weight: 700;
@@ -22,7 +23,8 @@ h1 {
 	line-height: 100%;
 }
 
-p {
+p,
+.p {
 	font-size: var(--font-size-body);
 	letter-spacing: 0.02em;
 	line-height: 130%;
@@ -35,11 +37,11 @@ svg {
 
 /* Sections */
 section {
-	padding: 0 20px;
+	padding: 0 var(--padding-section-horizontal);
 }
 
 section .inner {
-	padding: 40px 0;
+	padding: var(--padding-section-vertical) 0;
 }
 
 /* Utilities */
@@ -49,20 +51,20 @@ span.accent {
 
 @media screen and (min-width: 768px) {
 	section {
-		padding: 0 40px;
+		padding: 0 var(--padding-section-horizontal);
 	}
 
 	section .inner {
-		padding: 56px 0;
+		padding: var(--padding-section-vertical) 0;
 	}
 }
 
 @media screen and (min-width: 1024px) {
 	section {
-		padding: 0 72px;
+		padding: 0 var(--padding-section-horizontal);
 	}
 
 	section .inner {
-		padding: 72px 0;
+		padding: var(--padding-section-vertical) 0;
 	}
 }

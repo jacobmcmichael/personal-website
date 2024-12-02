@@ -54,6 +54,7 @@
 				value="Let's Talk"
 				variant="primary"
 				icon="arrow-right"
+				data-sveltekit-preload-data="hover"
 			/>
 
 			<div class="links__socials">

@@ -1,0 +1,11 @@
+#Header {
+	padding: 0 var(--padding-section-horizontal);
+}
+
+#Header .inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: var(--padding-header-vertical) 0;
+}

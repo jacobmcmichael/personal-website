@@ -1,4 +1,10 @@
 :root {
+	/* Spacing */
+	--padding-header-vertical: 20px;
+
+	--padding-section-vertical: 40px;
+	--padding-section-horizontal: 20px;
+
 	/* Typography */
 	--font-family-heading: "Inter Tight", sans-serif;
 	--font-family-body: "Inter Tight", sans-serif;
@@ -32,6 +38,21 @@
 
 @media screen and (min-width: 768px) {
 	:root {
+		/* Spacing */
+		--padding-header-horizontal: 24px;
+
+		--padding-section-vertical: 56px;
+		--padding-section-horizontal: 40px;
+
+		/* Typography */
 		--font-size-h1: 6rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	:root {
+		/* Spacing */
+		--padding-section-vertical: 72px;
+		--padding-section-horizontal: 72px;
 	}
 }

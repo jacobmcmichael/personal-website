@@ -3,7 +3,11 @@
 	import "$lib/styles/button.css";
 
 	/* Components */
-	import { ArrowRight, ArrowUpRight } from "$lib/components/Icons.svelte";
+	import {
+		ArrowRight,
+		ArrowUpRight,
+		Menu,
+	} from "$lib/components/Icons.svelte";
 
 	/* Types */
 	import type { ButtonProps } from "$lib/types/components";
@@ -24,6 +28,7 @@
 		variant = "primary",
 		icon = renderDefaultIcon(variant),
 		customClass = "",
+		...restProps
 	}: ButtonProps = $props();
 </script>
 
@@ -32,6 +37,8 @@
 		{@html ArrowRight()}
 	{:else if icon === "arrow-up-right"}
 		{@html ArrowUpRight()}
+	{:else if icon === "menu"}
+		{@html Menu()}
 	{:else if typeof icon === "string"}
 		{@html icon}
 	{/if}
@@ -48,6 +55,7 @@
 		<button
 			class={`button--${variant} ${customClass}`.trim()}
 			{type}
+			{...restProps}
 		>
 			{@render renderSpan?.(variant, value)}
 			{#if icon}
@@ -59,6 +67,7 @@
 			class={`button--${variant} ${customClass}`.trim()}
 			{type}
 			aria-label={value}
+			{...restProps}
 		>
 			{#if icon}
 				{@render renderIcon?.(icon)}
