@@ -9,21 +9,11 @@
 		Menu,
 	} from "$lib/components/Icons.svelte";
 
+	/* Helpers */
+	import { useDefaultIcon } from "$lib/helpers/components";
+
 	/* Types */
 	import type { LinkProps } from "$lib/types/components";
-
-	const renderDefaultIcon = (variant: string) => {
-		switch (variant) {
-			case "symbol":
-				return "arrow-right";
-
-			case "plain":
-				return "arrow-up-right";
-
-			default:
-				return undefined;
-		}
-	};
 
 	let {
 		href = "/",
@@ -31,7 +21,7 @@
 		referrerpolicy,
 		value = "link",
 		variant = "primary",
-		icon = renderDefaultIcon(variant),
+		icon = useDefaultIcon(variant),
 		customClass = "",
 		...restProps
 	}: LinkProps = $props();

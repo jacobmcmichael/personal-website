@@ -1,13 +1,30 @@
-export type ProjectItem = {
+type ContentfulImage = {
+	title?: string;
+	description?: string;
+	url?: string;
+};
+
+export type AboutSectionItem = {
 	_id: string;
-	title: string;
+	image: ContentfulImage;
 	excerpt: string;
 };
 
+export type AboutSectionData = {
+	aboutSectionCollection: {
+		items: AboutSectionItem[];
+	};
+};
+
+export type ProjectsItem = {
+	_id: string;
+	featuredImage: ContentfulImage;
+	images: ContentfulImage[];
+	clientName: string;
+};
+
 export type ProjectsData = {
-	projects: {
-		projectCollection: {
-			items: ProjectItem[];
-		};
+	projectsCollection: {
+		items: ProjectsItem[];
 	};
 };

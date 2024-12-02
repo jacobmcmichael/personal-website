@@ -40,7 +40,10 @@ section {
 	padding: 0 var(--padding-section-horizontal);
 }
 
-section .inner {
+section .inner,
+#Header .inner {
+	max-width: 1440px;
+	margin: 0 auto;
 	padding: var(--padding-section-vertical) 0;
 }
 

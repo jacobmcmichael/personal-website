@@ -9,24 +9,17 @@
 		Menu,
 	} from "$lib/components/Icons.svelte";
 
+	/* Helpers */
+	import { useDefaultIcon } from "$lib/helpers/components";
+
 	/* Types */
 	import type { ButtonProps } from "$lib/types/components";
-
-	const renderDefaultIcon = (variant: string) => {
-		switch (variant) {
-			case "symbol":
-				return "arrow-right";
-
-			default:
-				return undefined;
-		}
-	};
 
 	let {
 		type = "button",
 		value = "button",
 		variant = "primary",
-		icon = renderDefaultIcon(variant),
+		icon = useDefaultIcon(variant),
 		customClass = "",
 		...restProps
 	}: ButtonProps = $props();
