@@ -19,13 +19,29 @@ h1,
 	color: var(--color-font-heading);
 	font-size: var(--font-size-h1);
 	font-weight: 700;
+	text-align: center;
 	letter-spacing: -0.02em;
 	line-height: 100%;
+
+	margin-bottom: var(--margin-bottom-h1);
+}
+
+h2,
+.h2 {
+	color: var(--color-font-heading);
+	font-size: var(--font-size-h2);
+	font-weight: 600;
+	text-align: center;
+	letter-spacing: -0.02em;
+	line-height: 100%;
+
+	margin-bottom: var(--margin-bottom-h2);
 }
 
 p,
 .p {
 	font-size: var(--font-size-body);
+	text-align: center;
 	letter-spacing: 0.02em;
 	line-height: 130%;
 }
@@ -53,6 +69,28 @@ span.accent {
 }
 
 @media screen and (min-width: 768px) {
+	/* Typography */
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	.h3,
+	h4,
+	.h4,
+	h5,
+	.h5,
+	h6,
+	.h6 {
+		text-align: left;
+	}
+
+	p,
+	.p {
+		text-align: left;
+	}
+
+	/* Sections */
 	section {
 		padding: 0 var(--padding-section-horizontal);
 	}
@@ -63,6 +101,7 @@ span.accent {
 }
 
 @media screen and (min-width: 1024px) {
+	/* Sections */
 	section {
 		padding: 0 var(--padding-section-horizontal);
 	}

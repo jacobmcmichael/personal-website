@@ -6,8 +6,9 @@ type ContentfulImage = {
 
 export type AboutSectionItem = {
 	_id: string;
+	title: string;
+	description: string;
 	image: ContentfulImage;
-	excerpt: string;
 };
 
 export type AboutSectionData = {
@@ -18,9 +19,9 @@ export type AboutSectionData = {
 
 export type ProjectsItem = {
 	_id: string;
-	featuredImage: ContentfulImage;
-	images: ContentfulImage[];
 	clientName: string;
+	images: ContentfulImage[];
+	featuredImage: ContentfulImage;
 };
 
 export type ProjectsData = {

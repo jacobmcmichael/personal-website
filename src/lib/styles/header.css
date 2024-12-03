@@ -9,3 +9,7 @@
 
 	padding: var(--padding-header-vertical) 0;
 }
+
+#Header .logo {
+	margin: 0;
+}

@@ -4,12 +4,13 @@ export const getAboutSectionQuery = gql`
 	query GetAboutSection {
 		aboutSectionCollection {
 			items {
+				title
+				description
 				image {
 					title
 					description
 					url
 				}
-				excerpt
 			}
 		}
 	}

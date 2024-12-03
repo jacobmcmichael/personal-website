@@ -7,7 +7,6 @@
 
 	/* Props */
 	let { data }: any = $props();
-	$inspect(data);
 </script>
 
 <Hero />

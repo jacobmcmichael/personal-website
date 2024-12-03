@@ -5,6 +5,9 @@
 	--padding-section-vertical: 40px;
 	--padding-section-horizontal: 20px;
 
+	--margin-bottom-h1: 40px;
+	--margin-bottom-h2: 24px;
+
 	/* Typography */
 	--font-family-heading: "Inter Tight", sans-serif;
 	--font-family-body: "Inter Tight", sans-serif;
@@ -12,6 +15,7 @@
 	--font-size-base: 16px;
 	--font-size-body: 1.375rem;
 	--font-size-h1: 3.75rem;
+	--font-size-h2: 3rem;
 
 	--color-font-body: #030712;
 	--color-font-heading: #030712;
@@ -34,6 +38,9 @@
 
 	--color-button-secondary-text: #030712;
 	--color-button-secondary-bg: #ffffff;
+
+	/* Cards */
+	--border-radius-card: 24px;
 }
 
 @media screen and (min-width: 768px) {
@@ -45,7 +52,8 @@
 		--padding-section-horizontal: 40px;
 
 		/* Typography */
-		--font-size-h1: 6rem;
+		--font-size-h1: 6.5rem;
+		--font-size-h2: 4.5rem;
 	}
 }
 

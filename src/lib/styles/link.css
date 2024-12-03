@@ -44,6 +44,7 @@ a.link--secondary {
 }
 
 a.link--plain {
+	font-size: 1.125rem;
 	color: var(--color-link-plain-text);
 	background-color: var(--color-link-plain-bg);
 	border: none;
