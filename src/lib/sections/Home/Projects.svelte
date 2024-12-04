@@ -5,11 +5,9 @@
 	/* Styles */
 	import "$lib/styles/projects.css";
 
-	/* Helpers */
-	import { optimizeImage } from "$lib/helpers/contentful";
-
 	/* Components */
 	import Link from "$lib/components/Link.svelte";
+	import Image from "$lib/components/Image.svelte";
 
 	/* Props */
 	let { data }: { data: ProjectsData } = $props();
@@ -22,17 +20,10 @@
 		<div class="projects__group">
 			{#each items as item}
 				<div class="projects__item">
-					{#if item.featuredImage.url}
-						<img
-							src={optimizeImage(item.featuredImage.url, {
-								width: 600,
-								height: 400,
-								quality: 80,
-								format: "webp",
-							})}
-							alt={item.featuredImage.description}
-						/>
-					{/if}
+					<Image
+						src={item.featuredImage.url}
+						alt={item.featuredImage.description}
+					/>
 
 					<div class="item__details">
 						<div class="details__group">

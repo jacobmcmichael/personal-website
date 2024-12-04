@@ -19,3 +19,13 @@ export interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
 	variant?: "primary" | "secondary" | "plain" | "symbol";
 	customClass?: string;
 }
+
+export interface ImageProps extends HTMLAttributes<HTMLImageElement> {
+	src?: string;
+	alt?: string;
+	quality?: number;
+	widths?: number[];
+	heights?: number[];
+	loading?: "eager" | "lazy";
+	customClass?: string;
+}

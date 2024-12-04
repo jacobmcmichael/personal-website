@@ -21,7 +21,6 @@
 		variant = "primary",
 		icon = useDefaultIcon(variant),
 		customClass = "",
-		...restProps
 	}: ButtonProps = $props();
 </script>
 
@@ -48,7 +47,6 @@
 		<button
 			class={`button--${variant} ${customClass}`.trim()}
 			{type}
-			{...restProps}
 		>
 			{@render renderSpan?.(variant, value)}
 			{#if icon}
@@ -60,7 +58,6 @@
 			class={`button--${variant} ${customClass}`.trim()}
 			{type}
 			aria-label={value}
-			{...restProps}
 		>
 			{#if icon}
 				{@render renderIcon?.(icon)}

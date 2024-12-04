@@ -1,4 +1,4 @@
-export function optimizeImage(
+export function useOptimizeImage(
 	url: string,
 	options: {
 		width?: number;
