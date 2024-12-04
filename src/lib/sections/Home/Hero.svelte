@@ -1,12 +1,12 @@
 <script lang="ts">
+	/* Types */
+	import type { LinkProps } from "$lib/types/components";
+
 	/* Styles */
 	import "$lib/styles/hero.css";
 
 	/* Components */
 	import Link from "$lib/components/Link.svelte";
-
-	/* Types */
-	import type { LinkProps } from "$lib/types/components";
 
 	const socialElements: LinkProps[] = [
 		{

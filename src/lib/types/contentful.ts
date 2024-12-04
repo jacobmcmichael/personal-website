@@ -22,6 +22,7 @@ export type ProjectsItem = {
 	clientName: string;
 	images: ContentfulImage[];
 	featuredImage: ContentfulImage;
+	tags: string[];
 };
 
 export type ProjectsData = {

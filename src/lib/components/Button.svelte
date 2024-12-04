@@ -1,4 +1,7 @@
 <script lang="ts">
+	/* Types */
+	import type { ButtonProps } from "$lib/types/components";
+
 	/* Styles */
 	import "$lib/styles/button.css";
 
@@ -11,9 +14,6 @@
 
 	/* Helpers */
 	import { useDefaultIcon } from "$lib/helpers/components";
-
-	/* Types */
-	import type { ButtonProps } from "$lib/types/components";
 
 	let {
 		type = "button",

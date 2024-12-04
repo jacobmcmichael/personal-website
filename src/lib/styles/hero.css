@@ -1,5 +1,5 @@
 #Hero .inner__description {
-	margin-bottom: 40px;
+	margin-bottom: var(--margin-bottom-h1);
 }
 
 #Hero .inner {

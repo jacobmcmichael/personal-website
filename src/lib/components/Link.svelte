@@ -1,4 +1,7 @@
 <script lang="ts">
+	/* Types */
+	import type { LinkProps } from "$lib/types/components";
+
 	/* Styles */
 	import "$lib/styles/link.css";
 
@@ -12,9 +15,6 @@
 	/* Helpers */
 	import { useDefaultIcon } from "$lib/helpers/components";
 
-	/* Types */
-	import type { LinkProps } from "$lib/types/components";
-
 	let {
 		href = "/",
 		target,
@@ -23,6 +23,7 @@
 		variant = "primary",
 		icon = useDefaultIcon(variant),
 		customClass = "",
+		children,
 		...restProps
 	}: LinkProps = $props();
 </script>
@@ -41,7 +42,11 @@
 
 {#snippet renderSpan(variant: string, value: string)}
 	{#if variant !== "symbol"}
-		<span>{value}</span>
+		{#if children}
+			{@render children()}
+		{:else}
+			<span>{value}</span>
+		{/if}
 	{/if}
 {/snippet}
 

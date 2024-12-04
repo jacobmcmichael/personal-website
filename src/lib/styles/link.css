@@ -56,7 +56,7 @@ a.link--symbol {
 	color: var(--color-link-secondary-text);
 	background-color: var(--color-link-secondary-bg);
 
-	padding: 1rem 1.75rem;
+	padding: 0.75rem 1.25rem;
 }
 
 @media screen and (min-width: 768px) {

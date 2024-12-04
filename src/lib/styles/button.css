@@ -46,7 +46,7 @@ button.button--symbol {
 	color: var(--color-button-secondary-text);
 	background-color: var(--color-button-secondary-bg);
 
-	padding: 1rem 1.75rem;
+	padding: 0.75rem 1.25rem;
 }
 
 @media screen and (min-width: 768px) {

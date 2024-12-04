@@ -2,6 +2,8 @@ body {
 	color: var(--color-font-body);
 	font-family: var(--font-family-body);
 	font-size: var(--font-size-base);
+
+	background-color: var(--color-background-body);
 }
 
 /* Typography */
@@ -33,9 +35,20 @@ h2,
 	font-weight: 600;
 	text-align: center;
 	letter-spacing: -0.02em;
-	line-height: 100%;
+	line-height: 120%;
 
 	margin-bottom: var(--margin-bottom-h2);
+}
+
+h3,
+.h3 {
+	color: var(--color-font-heading);
+	font-size: var(--font-size-h3);
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	line-height: 120%;
+
+	margin-bottom: var(--margin-bottom-h3);
 }
 
 p,
@@ -49,6 +62,19 @@ p,
 /* Icons */
 svg {
 	stroke-width: 2px;
+}
+
+/* Tags */
+.tag {
+	padding: 0.2rem 0.8rem;
+
+	font-size: var(--font-size-tag);
+	letter-spacing: 0.02em;
+	text-wrap: nowrap;
+
+	border: 1px solid var(--color-tag-border);
+	border-radius: var(--border-radius-tag);
+	background-color: var(--color-tag-background);
 }
 
 /* Sections */
@@ -85,9 +111,21 @@ span.accent {
 		text-align: left;
 	}
 
+	h2,
+	.h2,
+	h3,
+	.h3 {
+		line-height: 100%;
+	}
+
 	p,
 	.p {
 		text-align: left;
+	}
+
+	/* Tags */
+	.tag {
+		font-size: var(--font-size-tag);
 	}
 
 	/* Sections */
@@ -101,6 +139,11 @@ span.accent {
 }
 
 @media screen and (min-width: 1024px) {
+	/* Tags */
+	.tag {
+		font-size: var(--font-size-tag);
+	}
+
 	/* Sections */
 	section {
 		padding: 0 var(--padding-section-horizontal);

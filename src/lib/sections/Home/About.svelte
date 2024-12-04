@@ -1,13 +1,14 @@
 <script lang="ts">
+	/* Types */
+	import type { AboutSectionData } from "$lib/types/contentful";
+
 	/* Styles */
 	import "$lib/styles/about.css";
 
 	/* Components */
 	import Link from "$lib/components/Link.svelte";
 
-	/* Types */
-	import type { AboutSectionData } from "$lib/types/contentful";
-
+	/* Props */
 	let { data }: { data: AboutSectionData } = $props();
 	let item = data.aboutSectionCollection.items[0];
 </script>
