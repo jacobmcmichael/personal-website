@@ -1,15 +1,15 @@
 <script lang="ts">
-	/* Types */
+	// Types
 	import type { ProjectsData } from "$lib/types/contentful";
 
-	/* Styles */
+	// Styles
 	import "$lib/styles/projects.css";
 
-	/* Components */
+	// Components
 	import Link from "$lib/components/Link.svelte";
 	import Image from "$lib/components/Image.svelte";
 
-	/* Props */
+	// Props
 	let { data }: { data: ProjectsData } = $props();
 	let items = data.projectsCollection.items;
 </script>
@@ -20,10 +20,12 @@
 		<div class="projects__group">
 			{#each items as item}
 				<div class="projects__item">
-					<Image
-						src={item.featuredImage.url}
-						alt={item.featuredImage.description}
-					/>
+					{#if item.featuredImage.url && item.featuredImage.description}
+						<Image
+							src={item.featuredImage.url}
+							alt={item.featuredImage.description}
+						/>
+					{/if}
 
 					<div class="item__details">
 						<div class="details__group">

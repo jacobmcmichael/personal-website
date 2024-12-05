@@ -1,54 +1,88 @@
 <script lang="ts">
-	/* Types */
+	// Types
 	import type { ImageProps } from "$lib/types/components";
 
 	/* Helpers */
-	import { useOptimizeImage } from "$lib/helpers/contentful";
+	import {
+		generateSrcsetFromNumbersArray,
+		optimizeContentfulImage,
+	} from "$lib/helpers/components";
 
-	/* Props */
+	// Variables
+	import { defaultContentfulImageOptions } from "$lib/helpers/variables";
+
+	// Props
 	let {
 		customClass = "",
-		src = "/image-placeholder.jpeg",
+		src,
+		srcset = [320, 480, 640, 800],
+		sizes = "(max-width: 480px) 100vw, (max-width: 800px) 75vw, 50vw",
 		alt,
-		quality = 80,
-		widths = [400, 600, 800],
-		heights = [400, 600, 800],
 		loading = "lazy",
+		contentfulOptions = { ...defaultContentfulImageOptions },
 	}: ImageProps = $props();
 
-	// Ensure widths and heights are arrays for consistency
-	const widthValues = Array.isArray(widths) ? widths : [widths];
-	const heightValues = Array.isArray(heights) ? heights : [heights];
+	const optimizedImage = contentfulOptions
+		? optimizeContentfulImage(src, { ...contentfulOptions, srcset })
+		: null;
 
-	// Dynamically generate srcset
-	const srcset = widthValues
-		.map((width, index) => {
-			const height = heightValues[index] || "auto"; // Use corresponding height or fallback
-			return `${useOptimizeImage(src, {
-				width,
-				height: typeof height === "number" ? height : undefined, // Only include height if it's a number
-				quality,
+	const optimizedWebP = contentfulOptions
+		? optimizeContentfulImage(src, {
+				...contentfulOptions,
+				srcset,
 				format: "webp",
-			})} ${width}w`;
-		})
-		.join(", ");
+			})
+		: null;
 
-	// Dynamically generate sizes (example assumes proportional sizing logic)
-	const sizes = widthValues
-		.map((width) => `(max-width: ${width}px) ${width}px`)
-		.join(", ");
+	const optimizedJPEG = contentfulOptions
+		? optimizeContentfulImage(src, {
+				...contentfulOptions,
+				srcset,
+				format: "jpg",
+			})
+		: null;
+
+	const fallbackSrcset = generateSrcsetFromNumbersArray(src, srcset);
+	const fallbackSrc = src;
 </script>
 
-<img
-	class={customClass}
-	src={useOptimizeImage(src, {
-		width: widthValues[1] || widthValues[0], // Default to the second width or first if only one
-		height: heightValues[1] || heightValues[0], // Default to the second height or first if only one
-		quality,
-		format: "webp",
-	})}
-	{srcset}
-	{sizes}
-	{alt}
-	{loading}
-/>
+<!-- Let the browser choose the first element it supports -->
+<picture>
+	<!-- User Defined Format -->
+	<source
+		srcset={optimizedImage
+			? optimizedImage.optimizedSourceSet
+			: fallbackSrcset}
+		{sizes}
+	/>
+
+	<!-- WebP -->
+	<source
+		srcset={optimizedWebP
+			? optimizedWebP.optimizedSourceSet
+			: fallbackSrcset}
+		{sizes}
+		type="image/webp"
+	/>
+
+	<!-- JPEG -->
+	<source
+		srcset={optimizedJPEG
+			? optimizedJPEG.optimizedSourceSet
+			: fallbackSrcset}
+		{sizes}
+		type="image/jpeg"
+	/>
+
+	<!-- Fallback Image -->
+	<img
+		class={customClass}
+		srcset={optimizedImage
+			? optimizedImage.optimizedSourceSet
+			: fallbackSrcset}
+		src={optimizedImage ? optimizedImage.optimizedSource : fallbackSrc}
+		{sizes}
+		{alt}
+		{loading}
+	/>
+</picture>

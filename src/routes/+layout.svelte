@@ -1,10 +1,10 @@
 <script lang="ts">
-	/* Styles */
+	// Styles
 	import "$lib/styles/_reset.css";
 	import "$lib/styles/_global.css";
 	import "$lib/styles/_variables.css";
 
-	/* Components */
+	// Components
 	import Header from "$lib/components/Header.svelte";
 
 	let { children } = $props();

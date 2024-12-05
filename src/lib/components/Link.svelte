@@ -1,11 +1,11 @@
 <script lang="ts">
-	/* Types */
+	// Types
 	import type { LinkProps } from "$lib/types/components";
 
-	/* Styles */
+	// Styles
 	import "$lib/styles/link.css";
 
-	/* Components */
+	// Components
 	import {
 		ArrowRight,
 		ArrowUpRight,
@@ -13,7 +13,7 @@
 	} from "$lib/components/Icons.svelte";
 
 	/* Helpers */
-	import { useDefaultIcon } from "$lib/helpers/components";
+	import { provideFallbackIcon } from "$lib/helpers/components";
 
 	let {
 		href = "/",
@@ -21,7 +21,7 @@
 		referrerpolicy,
 		value = "link",
 		variant = "primary",
-		icon = useDefaultIcon(variant),
+		icon = provideFallbackIcon(variant),
 		customClass = "",
 		children,
 		...restProps

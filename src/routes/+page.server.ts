@@ -1,4 +1,7 @@
+// Types
 import type { PageServerLoad } from "./$types";
+
+/* Queries */
 import { useGetAboutSection, useGetProjects } from "$lib/queries/contentful.js";
 
 export const load: PageServerLoad = async () => {
@@ -6,5 +9,6 @@ export const load: PageServerLoad = async () => {
 		useGetAboutSection(),
 		useGetProjects(),
 	]);
+
 	return { aboutSectionData, projectsData };
 };

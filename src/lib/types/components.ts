@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from "svelte/elements";
+import type { OptimizeContentfulImageOptions } from "./functions";
 
 export type Icon = "arrow-right" | "arrow-up-right" | "menu";
 
@@ -21,11 +22,12 @@ export interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
 }
 
 export interface ImageProps extends HTMLAttributes<HTMLImageElement> {
-	src?: string;
-	alt?: string;
-	quality?: number;
-	widths?: number[];
-	heights?: number[];
-	loading?: "eager" | "lazy";
 	customClass?: string;
+	srcset?: number[];
+	sizes?: string;
+	src: string;
+	alt: string;
+	loading?: "eager" | "lazy";
+
+	contentfulOptions?: OptimizeContentfulImageOptions;
 }

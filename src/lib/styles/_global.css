@@ -59,6 +59,11 @@ p,
 	line-height: 130%;
 }
 
+/* Images */
+picture > img {
+	width: 100%;
+}
+
 /* Icons */
 svg {
 	stroke-width: 2px;

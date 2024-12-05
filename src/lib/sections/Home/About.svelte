@@ -1,15 +1,15 @@
 <script lang="ts">
-	/* Types */
+	// Types
 	import type { AboutSectionData } from "$lib/types/contentful";
 
-	/* Styles */
+	// Styles
 	import "$lib/styles/about.css";
 
-	/* Components */
+	// Components
 	import Link from "$lib/components/Link.svelte";
 	import Image from "$lib/components/Image.svelte";
 
-	/* Props */
+	// Props
 	let { data }: { data: AboutSectionData } = $props();
 	let item = data.aboutSectionCollection.items[0];
 </script>
@@ -17,12 +17,14 @@
 <section id="About">
 	<div class="inner">
 		<div class="image__group">
-			<Image
-				customClass="portrait"
-				src={item.image.url}
-				alt={item.image.description}
-				loading="eager"
-			/>
+			{#if item.image.url && item.image.description}
+				<Image
+					customClass="portrait"
+					src={item.image.url}
+					alt={item.image.description}
+					loading="eager"
+				/>
+			{/if}
 		</div>
 
 		<div class="text__group">

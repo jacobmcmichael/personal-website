@@ -1,11 +1,11 @@
 <script lang="ts">
-	/* Types */
+	// Types
 	import type { ButtonProps } from "$lib/types/components";
 
-	/* Styles */
+	// Styles
 	import "$lib/styles/button.css";
 
-	/* Components */
+	// Components
 	import {
 		ArrowRight,
 		ArrowUpRight,
@@ -13,13 +13,13 @@
 	} from "$lib/components/Icons.svelte";
 
 	/* Helpers */
-	import { useDefaultIcon } from "$lib/helpers/components";
+	import { provideFallbackIcon } from "$lib/helpers/components";
 
 	let {
 		type = "button",
 		value = "button",
 		variant = "primary",
-		icon = useDefaultIcon(variant),
+		icon = provideFallbackIcon(variant),
 		customClass = "",
 	}: ButtonProps = $props();
 </script>

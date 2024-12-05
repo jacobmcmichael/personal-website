@@ -1,8 +1,8 @@
 <script lang="ts">
-	/* Styles */
+	// Styles
 	import "$lib/styles/header.css";
 
-	/* Components */
+	// Components
 	import Button from "./Button.svelte";
 </script>
 
