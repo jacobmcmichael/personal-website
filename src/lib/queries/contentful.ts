@@ -1,5 +1,5 @@
 import { GraphQLClient } from "graphql-request";
-import { getProjectsQuery, getAboutSectionQuery } from "./graphql";
+import { getProjectsSectionQuery, getAboutSectionQuery } from "./graphql";
 
 import {
 	CONTENTFUL_SPACE_ID,
@@ -15,7 +15,7 @@ export const contentfulClient = new GraphQLClient(CONTENTFUL_GRAPHQL_ENDPOINT, {
 });
 
 export async function useGetProjects() {
-	return contentfulClient.request(getProjectsQuery);
+	return contentfulClient.request(getProjectsSectionQuery);
 }
 
 export async function useGetAboutSection() {

@@ -16,7 +16,7 @@ export const getAboutSectionQuery = gql`
 	}
 `;
 
-export const getProjectsQuery = gql`
+export const getProjectsSectionQuery = gql`
 	query GetProjects {
 		projectsCollection {
 			items {
@@ -25,13 +25,6 @@ export const getProjectsQuery = gql`
 					title
 					description
 					url
-				}
-				imagesCollection {
-					items {
-						title
-						description
-						url
-					}
 				}
 				clientName
 				tags
