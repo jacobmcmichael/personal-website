@@ -12,18 +12,62 @@
 
 <svelte:head>
 	<link
-		rel="preconnect"
-		href="https://fonts.googleapis.com"
-	/>
-	<link
-		rel="preconnect"
-		href="https://fonts.gstatic.com"
+		rel="preload"
+		href="/fonts/inter-tight-latin-400.woff2"
+		as="font"
+		type="font/woff2"
 		crossorigin="anonymous"
 	/>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
-		rel="stylesheet"
+		rel="preload"
+		href="/fonts/inter-tight-latin-600.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
 	/>
+	<link
+		rel="preload"
+		href="/fonts/inter-tight-latin-700.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
+
+	<style>
+		@font-face {
+			font-family: "Inter Tight";
+			font-weight: 400;
+			font-style: normal;
+			font-display: swap;
+			src: url("/fonts/inter-tight-latin-400.woff2") format("woff2");
+		}
+
+		@font-face {
+			font-family: "Inter Tight";
+			font-weight: 600;
+			font-style: normal;
+			font-display: swap;
+			src: url("/fonts/inter-tight-latin-600.woff2") format("woff2");
+		}
+
+		@font-face {
+			font-family: "Inter Tight";
+			font-weight: 700;
+			font-style: normal;
+			font-display: swap;
+			src: url("/fonts/inter-tight-latin-700.woff2") format("woff2");
+		}
+
+		body {
+			font-family: "Inter Tight", system-ui;
+			font-weight: 400;
+		}
+
+		h1 {
+			font-family: "Inter Tight", system-ui;
+			font-weight: 700;
+		}
+	</style>
 </svelte:head>
 
 <header>
