@@ -8,58 +8,32 @@
 	// Components
 	import { ArrowRight, ArrowUpRight, Menu } from "$lib/components/Icons.svelte";
 
-	/* Helpers */
-	import { provideFallbackIcon } from "$lib/helpers/components";
-
-	let {
-		type = "button",
-		value = "button",
-		variant = "primary",
-		icon = provideFallbackIcon(variant),
-		customClass = "",
-	}: ButtonProps = $props();
+	let { type, value, icon, variant = "primary", ...restProps }: ButtonProps = $props();
 </script>
 
-{#snippet renderIcon(icon: string)}
+{#snippet renderSpan(variant?: string, value?: ButtonProps["value"])}
+	{#if variant !== "symbol"}
+		<span>{value}</span>
+	{/if}
+{/snippet}
+
+{#snippet renderIcon(icon?: string)}
 	{#if icon === "arrow-right"}
 		{@html ArrowRight()}
 	{:else if icon === "arrow-up-right"}
 		{@html ArrowUpRight()}
 	{:else if icon === "menu"}
 		{@html Menu()}
-	{:else if typeof icon === "string"}
-		{@html icon}
 	{/if}
 {/snippet}
 
-{#snippet renderSpan(variant: string, value: string)}
-	{#if variant !== "symbol"}
-		<span>{value}</span>
-	{/if}
-{/snippet}
-
-{#snippet renderButton(variant: string, value: string)}
-	{#if variant !== "symbol"}
-		<button
-			class={`button--${variant} ${customClass}`.trim()}
-			{type}
-		>
-			{@render renderSpan?.(variant, value)}
-			{#if icon}
-				{@render renderIcon?.(icon)}
-			{/if}
-		</button>
-	{:else}
-		<button
-			class={`button--${variant} ${customClass}`.trim()}
-			{type}
-			aria-label={value}
-		>
-			{#if icon}
-				{@render renderIcon?.(icon)}
-			{/if}
-		</button>
-	{/if}
-{/snippet}
-
-{@render renderButton(variant, value)}
+{#if type}
+	<button
+		class={`button--${variant} ${restProps.class ?? ""}`.trim()}
+		{type}
+		{...restProps}
+	>
+		{@render renderSpan?.(variant, value)}
+		{@render renderIcon?.(icon)}
+	</button>
+{/if}
