@@ -1,5 +1,6 @@
-import type { HTMLAttributes } from "svelte/elements";
-import type { OptimizeContentfulImageOptions } from "./functions";
+// Types
+import type { HTMLAttributes, HTMLImgAttributes } from "svelte/elements";
+import type { ContentfulImage } from "./contentful";
 
 export type Icon = "arrow-right" | "arrow-up-right" | "menu";
 
@@ -21,13 +22,19 @@ export interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
 	customClass?: string;
 }
 
-export interface ImageProps extends HTMLAttributes<HTMLImageElement> {
-	customClass?: string;
-	srcset?: number[];
-	sizes?: string;
+// TODO: Use Svelte HTMLAttributes for other components
+export interface ImageProps extends HTMLImgAttributes {
 	src: string;
-	alt: string;
-	loading?: "eager" | "lazy";
-
-	contentfulOptions?: OptimizeContentfulImageOptions;
+	type: "responsive" | "contentful";
+	contentfulOptions?: {
+		width: ContentfulImage["width"];
+		height: ContentfulImage["height"];
+		densities: [number, number][];
+		sizes: string;
+		queryParams: {
+			quality: number;
+			format: "webp" | "jpg" | "png";
+			fit: "fill" | "thumb";
+		};
+	};
 }

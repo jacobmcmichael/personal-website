@@ -19,10 +19,26 @@
 		<div class="image__group">
 			{#if item.image.url && item.image.description}
 				<Image
-					customClass="portrait"
+					class="portrait"
 					src={item.image.url}
 					alt={item.image.description}
 					loading="eager"
+					type="contentful"
+					contentfulOptions={{
+						width: item.image.width,
+						height: item.image.height,
+						densities: [
+							[400, 1],
+							[600, 2],
+							[800, 3],
+						],
+						sizes: "100vw, (min-width: 768px) 30vw",
+						queryParams: {
+							quality: 80,
+							format: "webp",
+							fit: "fill",
+						},
+					}}
 				/>
 			{/if}
 		</div>

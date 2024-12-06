@@ -5,10 +5,8 @@ import type { PageServerLoad } from "./$types";
 import { useGetAboutSection, useGetProjects } from "$lib/queries/contentful.js";
 
 export const load: PageServerLoad = async () => {
-	const [aboutSectionData, projectsData] = await Promise.all([
-		useGetAboutSection(),
-		useGetProjects(),
-	]);
+	const [aboutSectionData, projectsData] = await Promise.all([useGetAboutSection(), useGetProjects()]);
 
+	console.log(JSON.stringify(projectsData));
 	return { aboutSectionData, projectsData };
 };

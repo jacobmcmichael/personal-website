@@ -10,6 +10,8 @@ export const getAboutSectionQuery = gql`
 					title
 					description
 					url
+					width
+					height
 				}
 			}
 		}
@@ -25,6 +27,8 @@ export const getProjectsSectionQuery = gql`
 					title
 					description
 					url
+					width
+					height
 				}
 				clientName
 				tags

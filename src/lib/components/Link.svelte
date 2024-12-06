@@ -6,11 +6,7 @@
 	import "$lib/styles/link.css";
 
 	// Components
-	import {
-		ArrowRight,
-		ArrowUpRight,
-		Menu,
-	} from "$lib/components/Icons.svelte";
+	import { ArrowRight, ArrowUpRight, Menu } from "$lib/components/Icons.svelte";
 
 	/* Helpers */
 	import { provideFallbackIcon } from "$lib/helpers/components";

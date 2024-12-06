@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Types
-	import type { ProjectsData } from "$lib/types/contentful";
+	import type { ProjectsSectionData } from "$lib/types/contentful";
 
 	// Styles
 	import "$lib/styles/projects.css";
@@ -10,7 +10,7 @@
 	import Image from "$lib/components/Image.svelte";
 
 	// Props
-	let { data }: { data: ProjectsData } = $props();
+	let { data }: { data: ProjectsSectionData } = $props();
 	let items = data.projectsCollection.items;
 </script>
 
@@ -24,6 +24,23 @@
 						<Image
 							src={item.featuredImage.url}
 							alt={item.featuredImage.description}
+							loading="lazy"
+							type="contentful"
+							contentfulOptions={{
+								width: item.featuredImage.width,
+								height: item.featuredImage.height,
+								densities: [
+									[400, 1],
+									[800, 2],
+									[1600, 3],
+								],
+								sizes: "100vw, (min-width: 768px) 50vw, (min-width: 1024px) 30vw",
+								queryParams: {
+									quality: 80,
+									format: "webp",
+									fit: "fill",
+								},
+							}}
 						/>
 					{/if}
 

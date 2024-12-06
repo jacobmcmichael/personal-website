@@ -58,14 +58,14 @@
 			src: url("/fonts/inter-tight-latin-700.woff2") format("woff2");
 		}
 
-		body {
-			font-family: "Inter Tight", system-ui;
-			font-weight: 400;
-		}
-
 		h1 {
 			font-family: "Inter Tight", system-ui;
 			font-weight: 700;
+		}
+
+		body {
+			font-family: "Inter Tight", system-ui;
+			font-weight: 400;
 		}
 	</style>
 </svelte:head>

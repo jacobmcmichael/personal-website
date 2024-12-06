@@ -3,86 +3,75 @@
 	import type { ImageProps } from "$lib/types/components";
 
 	/* Helpers */
-	import {
-		generateSrcsetFromNumbersArray,
-		optimizeContentfulImage,
-	} from "$lib/helpers/components";
-
-	// Variables
-	import { defaultContentfulImageOptions } from "$lib/helpers/variables";
+	import { generateSourceSet, generateContentfulSource } from "$lib/helpers/components";
 
 	// Props
-	let {
-		customClass = "",
-		src,
-		srcset = [320, 480, 640, 800],
-		sizes = "(max-width: 480px) 100vw, (max-width: 800px) 75vw, 50vw",
-		alt,
-		loading = "lazy",
-		contentfulOptions = { ...defaultContentfulImageOptions },
-	}: ImageProps = $props();
+	let { src, type, contentfulOptions, ...restProps }: ImageProps = $props();
 
-	const optimizedImage = contentfulOptions
-		? optimizeContentfulImage(src, { ...contentfulOptions, srcset })
-		: null;
+	const width = contentfulOptions?.width ?? 1;
+	const height = contentfulOptions?.height ?? 1;
 
-	const optimizedWebP = contentfulOptions
-		? optimizeContentfulImage(src, {
-				...contentfulOptions,
-				srcset,
-				format: "webp",
-			})
-		: null;
-
-	const optimizedJPEG = contentfulOptions
-		? optimizeContentfulImage(src, {
-				...contentfulOptions,
-				srcset,
-				format: "jpg",
-			})
-		: null;
-
-	const fallbackSrcset = generateSrcsetFromNumbersArray(src, srcset);
-	const fallbackSrc = src;
+	const isContentfulType = type === "contentful";
+	const sizes: string = contentfulOptions?.sizes ?? "100vw, (min-width: 768px) 50vw, (min-width: 1024px) 30vw";
 </script>
 
-<!-- Let the browser choose the first element it supports -->
-<picture>
-	<!-- User Defined Format -->
-	<source
-		srcset={optimizedImage
-			? optimizedImage.optimizedSourceSet
-			: fallbackSrcset}
-		{sizes}
-	/>
+{#if contentfulOptions}
+	<picture>
+		<!-- User Defined Format -->
+		<source
+			srcset={isContentfulType ? generateSourceSet(src, contentfulOptions) : null}
+			{sizes}
+		/>
 
-	<!-- WebP -->
-	<source
-		srcset={optimizedWebP
-			? optimizedWebP.optimizedSourceSet
-			: fallbackSrcset}
-		{sizes}
-		type="image/webp"
-	/>
+		<!-- WebP -->
+		{#if contentfulOptions.queryParams}
+			<source
+				srcset={isContentfulType
+					? generateSourceSet(src, {
+							...contentfulOptions,
+							queryParams: {
+								...contentfulOptions.queryParams,
+								format: "webp",
+							},
+						})
+					: null}
+				{sizes}
+				type="image/webp"
+			/>
+		{/if}
 
-	<!-- JPEG -->
-	<source
-		srcset={optimizedJPEG
-			? optimizedJPEG.optimizedSourceSet
-			: fallbackSrcset}
-		{sizes}
-		type="image/jpeg"
-	/>
+		<!-- JPEG -->
+		{#if contentfulOptions.queryParams}
+			<source
+				srcset={isContentfulType
+					? generateSourceSet(src, {
+							...contentfulOptions,
+							queryParams: {
+								...contentfulOptions.queryParams,
+								format: "jpg",
+							},
+						})
+					: null}
+				{sizes}
+				type="image/jpeg"
+			/>
+		{/if}
 
-	<!-- Fallback Image -->
-	<img
-		class={customClass}
-		srcset={optimizedImage
-			? optimizedImage.optimizedSourceSet
-			: fallbackSrcset}
-		src={optimizedImage ? optimizedImage.optimizedSource : fallbackSrc}
-		{sizes}
-		{alt}
-		{loading}
-	/>
-</picture>
+		<!-- Fallback Image -->
+		<img
+			style:aspect-ratio={width / height}
+			srcset={isContentfulType
+				? generateSourceSet(src, {
+						...contentfulOptions,
+						queryParams: {
+							...contentfulOptions.queryParams,
+							format: "jpg",
+						},
+					})
+				: null}
+			src={generateContentfulSource(src, contentfulOptions)}
+			{sizes}
+			{...restProps}
+		/>
+	</picture>
+{/if}
