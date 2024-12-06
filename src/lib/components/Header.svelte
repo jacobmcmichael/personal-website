@@ -16,8 +16,11 @@
 		</div>
 
 		<Button
+			type="button"
+			value=""
 			icon="menu"
 			variant="symbol"
+			aria-label="menu"
 		/>
 	</div>
 </nav>

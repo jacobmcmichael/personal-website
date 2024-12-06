@@ -48,8 +48,9 @@
 						<div class="details__group">
 							<h3>
 								<Link
-									variant="plain"
+									href="/"
 									icon="arrow-right"
+									variant="plain"
 									data-sveltekit-preload-data="hover"
 								>
 									<span class="h3">{item.clientName}</span>

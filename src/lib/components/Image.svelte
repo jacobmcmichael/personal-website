@@ -15,7 +15,7 @@
 	const sizes: string = contentfulOptions?.sizes ?? "100vw, (min-width: 768px) 50vw, (min-width: 1024px) 30vw";
 </script>
 
-{#if contentfulOptions}
+{#if src && type && contentfulOptions}
 	<picture>
 		<!-- User Defined Format -->
 		<source

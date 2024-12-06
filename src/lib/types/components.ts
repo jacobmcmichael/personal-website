@@ -1,30 +1,26 @@
 // Types
-import type { HTMLAttributes, HTMLImgAttributes } from "svelte/elements";
 import type { ContentfulImage } from "./contentful";
+import type { HTMLAnchorAttributes, HTMLButtonAttributes, HTMLImgAttributes } from "svelte/elements";
 
 export type Icon = "arrow-right" | "arrow-up-right" | "menu";
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-	type?: "submit" | "reset" | "button";
+export interface ButtonProps extends HTMLButtonAttributes {
+	type: HTMLButtonAttributes["type"];
+	value: HTMLButtonAttributes["value"];
 	icon?: Icon;
-	value?: string;
 	variant?: "primary" | "secondary" | "symbol";
-	customClass?: string;
 }
 
-export interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
-	href?: string;
-	target?: "_blank";
-	referrerpolicy?: "no-referrer";
+export interface LinkProps extends HTMLAnchorAttributes {
+	href: HTMLAnchorAttributes["href"];
+	target?: HTMLAnchorAttributes["target"];
+	referrerpolicy?: HTMLAnchorAttributes["referrerpolicy"];
 	icon?: Icon;
-	value?: string;
 	variant?: "primary" | "secondary" | "plain" | "symbol";
-	customClass?: string;
 }
 
-// TODO: Use Svelte HTMLAttributes for other components
 export interface ImageProps extends HTMLImgAttributes {
-	src: string;
+	src: HTMLImgAttributes["src"];
 	type: "responsive" | "contentful";
 	contentfulOptions?: {
 		width: ContentfulImage["width"];

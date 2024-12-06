@@ -47,11 +47,11 @@
 			<h2>{item.title}</h2>
 			<p>{item.description}</p>
 			<Link
-				value="About me"
+				href="/"
 				variant="plain"
 				icon="arrow-right"
-				data-sveltekit-preload-data="hover"
-			/>
+				data-sveltekit-preload-data="hover">About Me</Link
+			>
 		</div>
 	</div>
 </section>

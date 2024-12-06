@@ -1,20 +1,6 @@
 // Types
 import type { ImageProps } from "$lib/types/components";
 
-/* Provides a fallback icon based on the specified variant. */
-export const provideFallbackIcon = (variant: string) => {
-	switch (variant) {
-		case "symbol":
-			return "arrow-right";
-
-		case "plain":
-			return "arrow-up-right";
-
-		default:
-			return undefined;
-	}
-};
-
 /**
  * Generates a `srcset` string from a URL (with parameters) and a set of array values.
  * Relies on a Contentful URL from @function generateContentfulSource()
