@@ -1,7 +1,9 @@
-type ContentfulImage = {
-	title?: string;
-	description?: string;
-	url?: string;
+export type ContentfulImage = {
+	title: string;
+	description: string;
+	url: string;
+	width: number;
+	height: number;
 };
 
 export type AboutSectionItem = {
@@ -17,16 +19,15 @@ export type AboutSectionData = {
 	};
 };
 
-export type ProjectsItem = {
+export type ProjectsSectionItem = {
 	_id: string;
 	clientName: string;
-	images: ContentfulImage[];
 	featuredImage: ContentfulImage;
 	tags: string[];
 };
 
-export type ProjectsData = {
+export type ProjectsSectionData = {
 	projectsCollection: {
-		items: ProjectsItem[];
+		items: ProjectsSectionItem[];
 	};
 };
