@@ -1,4 +1,160 @@
 body {
-	font-family: "Inter Tight", sans-serif;
-	font-size: 1rem;
+	color: var(--color-font-body);
+	font-family: var(--font-family-body);
+	font-size: var(--font-size-base);
+
+	background-color: var(--color-background-body);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--heading-font-family);
+}
+
+h1,
+.h1 {
+	color: var(--color-font-heading);
+	font-size: var(--font-size-h1);
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: -0.02em;
+	line-height: 100%;
+
+	margin-bottom: var(--margin-bottom-h1);
+}
+
+h2,
+.h2 {
+	color: var(--color-font-heading);
+	font-size: var(--font-size-h2);
+	font-weight: 600;
+	text-align: center;
+	letter-spacing: -0.02em;
+	line-height: 120%;
+
+	margin-bottom: var(--margin-bottom-h2);
+}
+
+h3,
+.h3 {
+	color: var(--color-font-heading);
+	font-size: var(--font-size-h3);
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	line-height: 120%;
+
+	margin-bottom: var(--margin-bottom-h3);
+}
+
+p,
+.p {
+	font-size: var(--font-size-body);
+	text-align: center;
+	letter-spacing: 0.02em;
+	line-height: 130%;
+}
+
+/* Images */
+picture > img {
+	width: 100%;
+}
+
+/* Icons */
+svg {
+	stroke-width: 2px;
+}
+
+/* Tags */
+.tag {
+	padding: 0.2rem 0.8rem;
+
+	font-size: var(--font-size-tag);
+	letter-spacing: 0.02em;
+	text-wrap: nowrap;
+
+	border: 1px solid var(--color-tag-border);
+	border-radius: var(--border-radius-tag);
+	background-color: var(--color-tag-background);
+}
+
+/* Sections */
+section {
+	padding: 0 var(--padding-section-horizontal);
+}
+
+section .inner,
+#Header .inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: var(--padding-section-vertical) 0;
+}
+
+/* Utilities */
+span.accent {
+	color: var(--color-font-accent);
+}
+
+@media screen and (min-width: 768px) {
+	/* Typography */
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	.h3,
+	h4,
+	.h4,
+	h5,
+	.h5,
+	h6,
+	.h6 {
+		text-align: left;
+	}
+
+	h2,
+	.h2,
+	h3,
+	.h3 {
+		line-height: 100%;
+	}
+
+	p,
+	.p {
+		text-align: left;
+	}
+
+	/* Tags */
+	.tag {
+		font-size: var(--font-size-tag);
+	}
+
+	/* Sections */
+	section {
+		padding: 0 var(--padding-section-horizontal);
+	}
+
+	section .inner {
+		padding: var(--padding-section-vertical) 0;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	/* Tags */
+	.tag {
+		font-size: var(--font-size-tag);
+	}
+
+	/* Sections */
+	section {
+		padding: 0 var(--padding-section-horizontal);
+	}
+
+	section .inner {
+		padding: var(--padding-section-vertical) 0;
+	}
 }

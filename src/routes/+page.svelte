@@ -1,26 +1,15 @@
 <script lang="ts">
-	/* Types */
-	import type { ProjectsData } from "$lib/types/contentful";
+	// Types
 
-	/* Components */
-	import Button from "$lib/components/Button.svelte";
+	// Components
+	import Hero from "$lib/sections/Home/Hero.svelte";
+	import About from "$lib/sections/Home/About.svelte";
+	import Projects from "$lib/sections/Home/Projects.svelte";
 
-	/* Props */
-	let { data }: { data: ProjectsData } = $props();
-	let items = data.projects.projectCollection.items;
+	// Props
+	let { data }: any = $props();
 </script>
 
-{#each items as project (project._id)}
-	<div>
-		<h2>{project.title}</h2>
-		<p>{project.excerpt}</p>
-	</div>
-{/each}
-
-<Button />
-<Button icon="arrow-right" />
-<Button variant="symbol" />
-<Button
-	icon="arrow-right"
-	variant="symbol"
-/>
+<Hero />
+<About data={data.aboutSectionData} />
+<Projects data={data.projectsData} />

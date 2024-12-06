@@ -1,7 +1,14 @@
+// Types
 import type { PageServerLoad } from "./$types";
-import { useGetProjects } from "$lib/queries/contentful.js";
+
+/* Queries */
+import { useGetAboutSection, useGetProjects } from "$lib/queries/contentful.js";
 
 export const load: PageServerLoad = async () => {
-	const projects = await useGetProjects();
-	return { projects };
+	const [aboutSectionData, projectsData] = await Promise.all([
+		useGetAboutSection(),
+		useGetProjects(),
+	]);
+
+	return { aboutSectionData, projectsData };
 };

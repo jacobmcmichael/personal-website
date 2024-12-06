@@ -1,11 +1,88 @@
 :root {
-	--button-border-color: #030712;
+	--color-background-body: #ffffff;
 
-	/* Primary */
-	--button-primary-text-color: #ffffff;
-	--button-primary-background-color: #030712;
+	/* Spacing */
+	--padding-header-vertical: 20px;
 
-	/* Secondary */
-	--button-secondary-text-color: #030712;
-	--button-secondary-background-color: #ffffff;
+	--padding-section-vertical: 40px;
+	--padding-section-horizontal: 20px;
+
+	--margin-bottom-h1: 32px;
+	--margin-bottom-h2: 24px;
+	--margin-bottom-h3: 12px;
+
+	/* Typography */
+	--font-family-heading: "Inter Tight", sans-serif;
+	--font-family-body: "Inter Tight", sans-serif;
+
+	--font-size-base: 16px;
+	--font-size-body: 1.375rem;
+	--font-size-h1: 3.75rem;
+	--font-size-h2: 3rem;
+	--font-size-h3: 1.375rem;
+	--font-size-tag: 0.875rem;
+
+	--color-font-body: #030712;
+	--color-font-heading: #030712;
+	--color-font-accent: #b6bcc6;
+
+	/* Links */
+	--color-link-border: #030712;
+
+	--color-link-primary-text: #ffffff;
+	--color-link-primary-bg: #030712;
+
+	--color-link-secondary-text: #030712;
+	--color-link-secondary-bg: #ffffff;
+
+	/* Buttons */
+	--color-button-border: #030712;
+
+	--color-button-primary-text: #ffffff;
+	--color-button-primary-bg: #030712;
+
+	--color-button-secondary-text: #030712;
+	--color-button-secondary-bg: #ffffff;
+
+	/* Tags */
+	--color-tag-border: #030712;
+	--color-tag-background: #ffffff;
+
+	--border-radius-tag: 16px;
+
+	/* Cards */
+	--border-radius-card: 24px;
+}
+
+@media screen and (min-width: 768px) {
+	:root {
+		/* Spacing */
+		--padding-header-horizontal: 24px;
+
+		--padding-section-vertical: 56px;
+		--padding-section-horizontal: 40px;
+
+		--margin-bottom-h3: 16px;
+
+		/* Typography */
+		--font-size-h1: 6rem;
+		--font-size-h2: 4rem;
+
+		/* Tags */
+		--border-radius-tag: 24px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	:root {
+		/* Spacing */
+		--padding-section-vertical: 72px;
+		--padding-section-horizontal: 72px;
+
+		/* Typography */
+		--font-size-tag: 1rem;
+
+		/* Tags */
+		--border-radius-tag: 32px;
+	}
 }

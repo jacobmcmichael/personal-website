@@ -1,9 +1,9 @@
 <script lang="ts">
 	// Types
-	import type { ButtonProps } from "$lib/types/components";
+	import type { LinkProps } from "$lib/types/components";
 
 	// Styles
-	import "$lib/styles/button.css";
+	import "$lib/styles/link.css";
 
 	// Components
 	import {
@@ -16,12 +16,16 @@
 	import { provideFallbackIcon } from "$lib/helpers/components";
 
 	let {
-		type = "button",
-		value = "button",
+		href = "/",
+		target,
+		referrerpolicy,
+		value = "link",
 		variant = "primary",
 		icon = provideFallbackIcon(variant),
 		customClass = "",
-	}: ButtonProps = $props();
+		children,
+		...restProps
+	}: LinkProps = $props();
 </script>
 
 {#snippet renderIcon(icon: string)}
@@ -38,32 +42,42 @@
 
 {#snippet renderSpan(variant: string, value: string)}
 	{#if variant !== "symbol"}
-		<span>{value}</span>
+		{#if children}
+			{@render children()}
+		{:else}
+			<span>{value}</span>
+		{/if}
 	{/if}
 {/snippet}
 
-{#snippet renderButton(variant: string, value: string)}
+{#snippet renderLink(variant: string, value: string)}
 	{#if variant !== "symbol"}
-		<button
-			class={`button--${variant} ${customClass}`.trim()}
-			{type}
+		<a
+			class={`link--${variant} ${customClass}`.trim()}
+			{href}
+			{target}
+			{referrerpolicy}
+			{...restProps}
 		>
 			{@render renderSpan?.(variant, value)}
 			{#if icon}
 				{@render renderIcon?.(icon)}
 			{/if}
-		</button>
+		</a>
 	{:else}
-		<button
-			class={`button--${variant} ${customClass}`.trim()}
-			{type}
+		<a
+			class={`link--${variant} ${customClass}`.trim()}
+			{href}
+			{target}
+			{referrerpolicy}
 			aria-label={value}
+			{...restProps}
 		>
 			{#if icon}
 				{@render renderIcon?.(icon)}
 			{/if}
-		</button>
+		</a>
 	{/if}
 {/snippet}
 
-{@render renderButton(variant, value)}
+{@render renderLink(variant, value)}
