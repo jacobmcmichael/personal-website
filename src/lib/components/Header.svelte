@@ -27,10 +27,10 @@
 		</div>
 
 		<!-- TODO: Move this to the menu -->
-		<button
+		<!-- <button
 			style="position: fixed; top: 0; left: 50%;"
 			onclick={handleThemeChange}>{$theme}</button
-		>
+		> -->
 
 		<Button
 			type="button"
