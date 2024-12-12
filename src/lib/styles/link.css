@@ -19,8 +19,6 @@ a {
 
 	border: 1px solid var(--color-link-border);
 	border-radius: 100px;
-
-	transition: opacity 0.3s;
 }
 
 a svg {
@@ -34,19 +32,25 @@ a:hover {
 }
 
 a.link--primary {
-	color: var(--color-link-primary-text);
-	background-color: var(--color-link-primary-bg);
+	--current-color: var(--color-link-primary-text);
+
+	color: var(--current-color);
+	background-color: var(--color-link-primary-background);
 }
 
 a.link--secondary {
-	color: var(--color-link-secondary-text);
-	background-color: var(--color-link-secondary-bg);
+	--current-color: var(--color-link-secondary-text);
+
+	color: var(--current-color);
+	background-color: var(--color-link-secondary-background);
 }
 
 a.link--plain {
+	--current-color: var(--color-link-plain-text);
+
 	font-size: 1.125rem;
-	color: var(--color-link-plain-text);
-	background-color: var(--color-link-plain-bg);
+	color: var(--current-color);
+	background-color: var(--color-link-plain-background);
 	border: none;
 
 	padding: 0;
@@ -54,7 +58,7 @@ a.link--plain {
 
 a.link--symbol {
 	color: var(--color-link-secondary-text);
-	background-color: var(--color-link-secondary-bg);
+	background-color: var(--color-link-secondary-background);
 
 	padding: 0.75rem 1.25rem;
 }
