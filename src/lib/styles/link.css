@@ -31,6 +31,12 @@ a:hover {
 	cursor: pointer;
 }
 
+/*
+ * Define a `--current-color` value for elements that could potentially
+ * encapsulate a child, such as this anchor element. 
+ *
+ * @see {@link $lib/styles/_theme.css} for child properties.
+ */
 a.link--primary {
 	--current-color: var(--color-link-primary-text);
 

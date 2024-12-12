@@ -30,6 +30,12 @@ button:hover {
 	cursor: pointer;
 }
 
+/*
+ * Define a `--current-color` value for elements that could potentially
+ * encapsulate a child, such as this button element. 
+ *
+ * @see {@link $lib/styles/_theme.css} for child properties.
+ */
 button.button--primary {
 	--current-color: var(--color-button-primary-text);
 

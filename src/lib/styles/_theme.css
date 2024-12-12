@@ -6,12 +6,12 @@ body {
  * Fix for style delay when switching themes.
  *
  * The selectors below avoid nested re-styling by explicitly passing
- * an inherited parent property to the child.
+ * a `--current-color` property to the child, which also allows us to
+ * keep the inheritance behavior and add a fallback value.
  *
  * @see {@link $lib/styles/button.css or $lib/styles/link.css}
  * for parent element variables.
 **/
-p,
 h1,
 .h1,
 h2,
@@ -24,8 +24,14 @@ h5,
 .h5,
 h6,
 .h6,
+p,
+.p,
 svg,
 span {
+	/*
+     * If there's no `--current-color` it must not be reliant on a parent element,
+     * so we can safely inherit the property value.
+     */
 	color: var(--current-color, inherit);
 	transition: color var(--theme-transition-timing);
 }
