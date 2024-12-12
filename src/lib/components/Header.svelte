@@ -4,6 +4,17 @@
 
 	// Components
 	import Button from "./Button.svelte";
+
+	// Variables
+	import { theme } from "$lib/store";
+
+	const handleThemeChange = () => {
+		if ($theme === "light") {
+			$theme = "dark";
+		} else if ($theme === "dark") {
+			$theme = "light";
+		}
+	};
 </script>
 
 <nav id="Header">
@@ -14,6 +25,12 @@
 		>
 			<span>jacob</span><span class="accent">mcmichael.</span>
 		</div>
+
+		<!-- TODO: Move this to the menu -->
+		<button
+			style="position: fixed; top: 0; left: 50%;"
+			onclick={handleThemeChange}>{$theme}</button
+		>
 
 		<Button
 			type="button"
