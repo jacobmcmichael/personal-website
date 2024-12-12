@@ -6,13 +6,13 @@
 	import "$lib/styles/_theme.css";
 
 	// Components
-	import Header from "$lib/components/Header.svelte";
+	import Navigation from "$lib/components/Navigation.svelte";
 
 	let { children } = $props();
 </script>
 
 <header>
-	<Header />
+	<Navigation />
 </header>
 
 <main>

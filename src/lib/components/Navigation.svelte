@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Styles
-	import "$lib/styles/header.css";
+	import "$lib/styles/navigation.css";
 
 	// Components
 	import Button from "./Button.svelte";
@@ -19,9 +19,9 @@
 	let isMenuOpen: boolean = $state(false);
 </script>
 
-<nav id="Header">
-	<div class="inner">
-		<div class="menu">
+<nav id="Navigation">
+	<div class="menu">
+		<div class="inner">
 			<div
 				class="logo h1 p"
 				aria-label="home"

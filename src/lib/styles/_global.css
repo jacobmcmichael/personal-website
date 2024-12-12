@@ -95,8 +95,7 @@ section {
 	padding: 0 var(--padding-section-horizontal);
 }
 
-section .inner,
-#Header .inner {
+.inner {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: var(--padding-section-vertical) 0;

@@ -1,0 +1,29 @@
+#Navigation {
+}
+
+#Navigation .menu {
+	position: relative;
+	padding: 0 var(--padding-section-horizontal);
+}
+
+#Navigation .inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: var(--padding-header-vertical) 0;
+}
+
+#Navigation .logo {
+	margin: 0;
+}
+
+#Navigation .drawer {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+
+	border: 3px solid red;
+}
