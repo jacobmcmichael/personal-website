@@ -1,6 +1,33 @@
 // Types
 import type { ImageProps } from "$lib/types/components";
 
+// Components
+import { ArrowRight, ArrowUpRight, Menu, Close } from "$lib/components/Icons.svelte";
+
+export const useRenderIcon = (icon: string) => {
+	let svg = "";
+
+	switch (icon) {
+		case "arrow-right":
+			svg = ArrowRight();
+			break;
+
+		case "arrow-up-right":
+			svg = ArrowUpRight();
+			break;
+
+		case "menu":
+			svg = Menu();
+			break;
+
+		case "close":
+			svg = Close();
+			break;
+	}
+
+	return svg;
+};
+
 /**
  * Generates a `srcset` string from a URL (with parameters) and a set of array values.
  * Relies on a Contentful URL from @function generateContentfulSource()

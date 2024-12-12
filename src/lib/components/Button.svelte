@@ -5,9 +5,10 @@
 	// Styles
 	import "$lib/styles/button.css";
 
-	// Components
-	import { ArrowRight, ArrowUpRight, Menu } from "$lib/components/Icons.svelte";
+	// Helpers
+	import { useRenderIcon } from "$lib/helpers/components";
 
+	// Props
 	let { type, value, icon, variant = "primary", ...restProps }: ButtonProps = $props();
 </script>
 
@@ -18,12 +19,8 @@
 {/snippet}
 
 {#snippet renderIcon(icon?: string)}
-	{#if icon === "arrow-right"}
-		{@html ArrowRight()}
-	{:else if icon === "arrow-up-right"}
-		{@html ArrowUpRight()}
-	{:else if icon === "menu"}
-		{@html Menu()}
+	{#if icon}
+		{@html useRenderIcon(icon)}
 	{/if}
 {/snippet}
 

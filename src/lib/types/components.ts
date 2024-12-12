@@ -2,7 +2,7 @@
 import type { ContentfulImage } from "./contentful";
 import type { HTMLAnchorAttributes, HTMLButtonAttributes, HTMLImgAttributes } from "svelte/elements";
 
-export type Icon = "arrow-right" | "arrow-up-right" | "menu";
+export type Icon = "arrow-right" | "arrow-up-right" | "menu" | "close";
 
 export interface ButtonProps extends HTMLButtonAttributes {
 	type: HTMLButtonAttributes["type"];

@@ -3,11 +3,13 @@
 }
 
 #Header .inner {
+	padding: var(--padding-header-vertical) 0;
+}
+
+#Header .menu {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
-	padding: var(--padding-header-vertical) 0;
 }
 
 #Header .logo {
