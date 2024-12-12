@@ -8,13 +8,13 @@
 	// Variables
 	import { theme } from "$lib/store";
 
-	const handleThemeChange = () => {
-		if ($theme === "light") {
-			$theme = "dark";
-		} else if ($theme === "dark") {
-			$theme = "light";
-		}
-	};
+	// const handleThemeChange = () => {
+	// 	if ($theme === "light") {
+	// 		$theme = "dark";
+	// 	} else if ($theme === "dark") {
+	// 		$theme = "light";
+	// 	}
+	// };
 </script>
 
 <nav id="Header">
