@@ -12,9 +12,9 @@
 	let { href, variant = "primary", icon, children, ...restProps }: LinkProps = $props();
 </script>
 
-{#snippet renderSpan(variant?: string)}
+{#snippet renderSpan()}
 	{#if children}
-		<span>{@render children()}</span>
+		{@render children()}
 	{/if}
 {/snippet}
 
@@ -26,11 +26,11 @@
 
 {#if href}
 	<a
+		{...restProps}
 		class={`link--${variant} ${restProps.class ?? ""}`.trim()}
 		{href}
-		{...restProps}
 	>
-		{@render renderSpan?.(variant)}
+		{@render renderSpan?.()}
 		{@render renderIcon?.(icon)}
 	</a>
 {/if}

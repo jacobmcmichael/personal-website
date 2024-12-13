@@ -1,6 +1,9 @@
 :root {
 	/* Colors */
-	--color-background-body: #ffffff;
+	--color-body-background: #ffffff;
+	--color-drawer-background: #ffffff;
+
+	--color-drawer-border: #1f2937;
 
 	--color-font-body: #030712;
 	--color-font-heading: #030712;
@@ -65,7 +68,7 @@
 
 [data-theme="dark"] {
 	/* Colors */
-	--color-background-body: #030712;
+	--color-body-background: #030712;
 
 	--color-font-body: #ffffff;
 	--color-font-heading: #ffffff;

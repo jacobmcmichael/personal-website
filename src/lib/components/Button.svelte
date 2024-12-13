@@ -26,9 +26,9 @@
 
 {#if type}
 	<button
+		{...restProps}
 		class={`button--${variant} ${restProps.class ?? ""}`.trim()}
 		{type}
-		{...restProps}
 	>
 		{@render renderSpan?.(variant, value)}
 		{@render renderIcon?.(icon)}

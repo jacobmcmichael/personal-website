@@ -4,6 +4,7 @@
 
 	// Components
 	import Button from "./Button.svelte";
+	import Link from "./Link.svelte";
 
 	// Variables
 	import { theme } from "$lib/store";
@@ -15,6 +16,25 @@
 	// 		$theme = "light";
 	// 	}
 	// };
+
+	const links = [
+		{
+			text: "Home",
+			url: "/",
+		},
+		{
+			text: "About",
+			url: "/about",
+		},
+		{
+			text: "Works",
+			url: "/",
+		},
+		{
+			text: "Insights",
+			url: "/insights",
+		},
+	];
 
 	let isMenuOpen: boolean = $state(false);
 </script>
@@ -44,7 +64,27 @@
 				onclick={() => (isMenuOpen = !isMenuOpen)}
 			/>
 		</div>
+	</div>
 
-		<div class="drawer"></div>
+	<div
+		class="drawer"
+		aria-expanded={isMenuOpen}
+	>
+		<div class="inner">
+			<div class="links">
+				{#if links.length > 0}
+					{#each links as item, i}
+						<Link
+							class="link"
+							href={item.url}
+							variant="plain"
+						>
+							<span class="h2">{item.text}</span>
+							<span class="p">(0{i})</span>
+						</Link>
+					{/each}
+				{/if}
+			</div>
+		</div>
 	</div>
 </nav>
